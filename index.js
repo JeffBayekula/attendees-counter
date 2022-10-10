@@ -7,6 +7,7 @@ let countCheck = [];
 function increment() {
   count += 1;
   countEl.textContent = count;
+  changeFont();
 }
 
 function decrement() {
@@ -16,6 +17,7 @@ function decrement() {
   } else {
     countEl.textContent = count;
   }
+  changeFont();
 }
 
 function save() {
@@ -28,7 +30,6 @@ function save() {
     countEl.textContent = 0;
     count = 0;
   }
-  console.log(countCheck);
 }
 
 function resetAll() {
@@ -36,6 +37,7 @@ function resetAll() {
   saveEl.textContent = "Total attendees are: ";
   count = 0;
   countCheck = [];
+  changeFont();
 }
 
 function total() {
@@ -44,4 +46,12 @@ function total() {
     return total + num;
   }
   // countCheck = [];
+}
+
+function changeFont() {
+  if (countEl.textContent === "Negative numbers not allowed.") {
+    document.getElementById("count-el").style.fontSize = 35;
+  } else {
+    document.getElementById("count-el").style.fontSize = 50;
+  }
 }
