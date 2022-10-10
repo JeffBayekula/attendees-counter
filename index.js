@@ -14,6 +14,7 @@ function decrement() {
   count -= 1;
   if (count < 0) {
     countEl.textContent = countEl.textContent = "Negative numbers not allowed.";
+    count = 0;
   } else {
     countEl.textContent = count;
   }
